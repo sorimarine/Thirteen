@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="gameRoom.css">
+    <Title>Tienlen Game Room</Title>
+  </head>
+  <body>
+    <div class="game-container">
+      <header>
+        <h1>Tienlen Game Room</h1>
+      </header>
+      <main>
+      </main>
+    </div>
+    <div class="chat-container">
+      <header class="chat-header">
+        <h1>Chat!</h1>
+      </header>
+      <main class="chat-main">
+        <div class="chat-messages"></div>
+      </main>
+      <div class="chat-form-container">
+        <form id="chat-form">
+          <input id="msg" type="text" placeholder="Enter Message" 
+            autocomplete="off" required/>
+          <button class="btn">Send</button>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="gameRoom.js"></script>
+  </body>
+</html>

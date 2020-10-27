@@ -1,0 +1,35 @@
+body {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.game-container {
+  height: 65%;
+}
+
+.chat-container {
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-main {
+  height: 60%;
+  overflow: auto;
+
+  background-color: rgb(43, 44, 41);
+  color: rgb(155, 150, 150);
+}
+
+.message {
+  display: flex;
+}
+.message p {
+  padding-left: 10px;
+}
+
+span.username {
+  color: rgb(255, 255, 255);
+}

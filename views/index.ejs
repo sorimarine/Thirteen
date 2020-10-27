@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <Title>Tienlen Game Server</Title>
+  </head>
+  <body>
+    <div>
+      <header>
+        <h1>Tienlen Game Server</h1>
+      </header>
+      <main>
+        <form action='gameRoom'>
+          <div>
+            <label for="username">Username</label>
+            <input type="text"
+                   name="username" 
+                   id="username" 
+                   placeholder="username"
+                   required
+            />
+            <label for="room">Choose a room:</label>
+            <select name="room" id="room">
+              <!-- <% for (let roomNum = 1; roomNum < 5; roomNum += 1) { %>
+                <option value="room <%= roomNum %>" <%if (roomOccupancies["room " + roomNum] >= limit) { %> disabled <% } %>>Room <%= roomNum %>
+                  <label>(<%= roomOccupancies["room " + roomNum]? roomOccupancies["room " + roomNum]: 0 %></label>/<%= limit? limit: 3 %>)</option>
+              <% } %> -->
+              <% for (let roomNum = 1; roomNum < 5; roomNum += 1) { 
+                let roomName = "room " + roomNum; 
+                let roomLimit = limit? limit: 5;
+                let currRoomOcc = roomOccupancies[roomName]? 
+                  roomOccupancies[roomName] : 0; 
+                let atLimit = currRoomOcc >= limit; 
+                let roomString = `${roomName} (${currRoomOcc}/${roomLimit})`; %>
+                
+                <option value="<%= roomName %>" <%if (atLimit) { %> disabled <% } %>>
+                  <%= roomString %></option>
+              <% } %>
+            </select>
+            <button type="submit">Join Room</button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
